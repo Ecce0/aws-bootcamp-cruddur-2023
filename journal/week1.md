@@ -1,5 +1,38 @@
 # Week 1 — App Containerization
+  ## Required Homeword
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 #### Below are notes to self 
+
+
+ ##### 7 OSI Layers - 
+   ![image](https://user-images.githubusercontent.com/97846441/221713217-e404e871-3b94-447a-bfc2-7707bd34bcce.png)
+    
+ https://www.imperva.com/learn/application-security/osi-model/
+       
+ 
+ #### Docker
+ Dockerhub - provided by Docker - is a container registry. You can host your own container images for private or host and share. 
+ There are other container registries. I.e. AWS ECS, Kubernetes?, J-frog. Its free.99. You can also use in VS Code, due to laptop ready to crash, use gitpod.io
+   1 - Create a file called 'Dockerfile'
+   2 - Within the file, you put the Docker config, each line expresses to the env path how to run the app:
+        
+        FROM python:3.10-slim-buster - this loads another dockerfile on dockerhub, python is the language, 3 is the version
+
+        WORKDIR /backend-flask - the container will start running from the backend-flask ON THE GUEST OS (the container), its an entry point
+         *the host operating system is what you're on (in my case, its windows), the guest os is the container
+   ![image](https://user-images.githubusercontent.com/97846441/221714412-279c0b87-d709-44b9-aa48-809dbf560b04.png)
+
+        COPY requirements.txt requirements.txt - this copies "requirements.txt" from the host OS (outside container) and places "requirements.txt" inside the guest OS
+                                                 it contains the libraries we want to install
+                                                 
+        RUN pip3 install -r requirements.txt - this will install the python libraries on the guest OS (inside container)
+
+        COPY . . - the first period means "everything" inside the host OS and the 2nd period means everything in the guest OS 
+
+        ENV FLASK_ENV=development - its just a regular env var; this is where you would set all your env vars and they're set on the guest OS
+
+        EXPOSE ${PORT} - expose the port the app is running on 
+        
+        CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"] - within the brackets are commands to run for flask
