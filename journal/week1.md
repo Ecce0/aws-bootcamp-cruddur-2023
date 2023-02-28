@@ -42,7 +42,27 @@
    ![image](https://user-images.githubusercontent.com/97846441/221718804-e4e22f80-e345-4b6d-be7b-b30195231f2a.png)
    
    docker build -t  backend-flask ./backend-flask - this commands actually builds the container. You should get a successful message afterwards.
+    docker - docker
+    build - builds the image
+    -t - tags a name
+    backend-flask creates the tag name "backend-flask"
+    ./backend-flask - looks in the current directory to look for the Dockerfile    
    ![image](https://user-images.githubusercontent.com/97846441/221720231-7e2b35be-d615-45f7-9592-f2c263a29b60.png)
+   
+   HOST OS - the computer in your house running on an operating system (an Apple Mac running on MacOS system)
+   GUEST OS - has to do with virtualization; 
+   HYPERVISOR - allows you to virtualize a computer onto a computer
+   With Containers, A CONTAINER DAEMON replaces the hypervisor and shares technologies witht he HOST OS and the container 
+   ![image](https://user-images.githubusercontent.com/97846441/221722415-e3d87ad3-c541-4f14-92e0-a64ce7542ac3.png)
+   
+   Proof of image built -    
+   ![image](https://user-images.githubusercontent.com/97846441/221723096-b08e8d24-6c60-4d41-a485-23bf9dc07b34.png)
+   ![image](https://user-images.githubusercontent.com/97846441/221723185-2e913fa4-3e64-43b6-9d88-0eb03dc966cb.png)
+
+
+   
+
+
    
    
 
