@@ -1,5 +1,5 @@
 # Week 1 — App Containerization
-  ## Required Homeword
+  ## Required Homework
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -36,3 +36,13 @@
         EXPOSE ${PORT} - expose the port the app is running on 
         
         CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"] - within the brackets are commands to run for flask
+
+
+   Be sure to unlock the key-lock to make the url public
+   ![image](https://user-images.githubusercontent.com/97846441/221718804-e4e22f80-e345-4b6d-be7b-b30195231f2a.png)
+   
+   docker build -t  backend-flask ./backend-flask - this commands actually builds the container. You should get a successful message afterwards.
+   ![image](https://user-images.githubusercontent.com/97846441/221720231-7e2b35be-d615-45f7-9592-f2c263a29b60.png)
+   
+   
+
