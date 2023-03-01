@@ -10,18 +10,28 @@
    https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/a85288930eee851e5e1c870d3f17aaecf80752fb/backend-flask/openapi-3.0.yml#L1
    ![image](https://user-images.githubusercontent.com/97846441/222040692-78fe8a97-f561-483d-bc42-9f5d9b047fbc.png)
    
+   
    ### Write a Flask Backend Endpoint for Notifications
    https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/a85288930eee851e5e1c870d3f17aaecf80752fb/backend-flask/app.py#L69
    ![image](https://user-images.githubusercontent.com/97846441/222040851-9be797f5-5e93-412e-8991-117e4792e9c7.png)
+   
 
    ### Write a React Page for Notifications
    https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/a85288930eee851e5e1c870d3f17aaecf80752fb/frontend-react-js/src/pages/NotificationsFeedPage.js#L13
    ![image](https://user-images.githubusercontent.com/97846441/222041197-f2c27d6b-c1d8-44e6-97b0-5c25a1cc919b.png)   
    
-   ### Run DynamoDB Local Container and ensure it works
+   
+   ### Run DynamoDB Local Container and ensure it works (its working)
+   https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/929a34272c7a041c92c181ab96315e710a3a2983/docker-compose.yml#L20
+   ![image](https://user-images.githubusercontent.com/97846441/222042014-15e233f8-a6e3-44d3-9e82-e79a30b4be41.png)
+
+
    
    ### Run Postgres Container and ensure it works
-
+   https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/929a34272c7a041c92c181ab96315e710a3a2983/docker-compose.yml#L20
+   ![image](https://user-images.githubusercontent.com/97846441/222042482-912a4fd1-028a-49c6-88aa-7fabf38f93a8.png)
+   ![image](https://user-images.githubusercontent.com/97846441/222042559-1f3eac3e-61f1-4b6d-8293-252c8612a0a9.png)
+   ![image](https://user-images.githubusercontent.com/97846441/222042737-25f91953-fd25-4195-8f28-aac52993665a.png)
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
