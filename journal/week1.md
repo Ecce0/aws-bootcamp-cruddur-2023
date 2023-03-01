@@ -1,5 +1,27 @@
 # Week 1 — App Containerization
   ## Required Homework
+   
+   ### Containerize Application - Dockerfiles, docker-compose
+   https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/a85288930eee851e5e1c870d3f17aaecf80752fb/docker-compose.yml#L1
+   ![image](https://user-images.githubusercontent.com/97846441/222040429-d34bffc8-5887-442c-ba86-60ba00bb72dc.png)
+
+
+   ### Document the Notification Endpoint for the OpenAI Document
+   https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/a85288930eee851e5e1c870d3f17aaecf80752fb/backend-flask/openapi-3.0.yml#L1
+   ![image](https://user-images.githubusercontent.com/97846441/222040692-78fe8a97-f561-483d-bc42-9f5d9b047fbc.png)
+   
+   ### Write a Flask Backend Endpoint for Notifications
+   https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/a85288930eee851e5e1c870d3f17aaecf80752fb/backend-flask/app.py#L69
+   ![image](https://user-images.githubusercontent.com/97846441/222040851-9be797f5-5e93-412e-8991-117e4792e9c7.png)
+
+   ### Write a React Page for Notifications
+   https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/a85288930eee851e5e1c870d3f17aaecf80752fb/frontend-react-js/src/pages/NotificationsFeedPage.js#L13
+   ![image](https://user-images.githubusercontent.com/97846441/222041197-f2c27d6b-c1d8-44e6-97b0-5c25a1cc919b.png)   
+   
+   ### Run DynamoDB Local Container and ensure it works
+   
+   ### Run Postgres Container and ensure it works
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
