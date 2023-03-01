@@ -91,8 +91,79 @@
       name: cruddur
 
    
-
+ #### Swagger set up example 
+    /api/activities/notifications:
+      get:
+       description: 'Return a feed of activity for all of those that I follow'
+       tags:
+        - activities
+       parameters: []
+       responses:
+         '200':
+           description: Returns an array of activities
+           content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity'    <------------ pay attention to this, reference downwards
+            
+            
+  ##### Schema for line 109 'Activity' 
+    components:
+    schemas:
+      Activity:
+        type: object
+        properties:
+          uuid:
+            type: string
+            example: 0056a369-4618-43a4-ad88-e7c371bf5582
+          display_name:
+            type: string
+            example: "Andrew Brown"
+          handle:
+            type: string
+            example: "andrewbrown"
+          message:
+            type: string
+            example: "Who likes pineapple on their pizza?"
+          replies_count:
+            type: integer
+            example: 5
+          reposts_count:
+            type: integer
+            example: 2
+          likes_count:
+            type: integer
+            example: 103
+          created_at:
+            type: string
+            example: "2023-02-06T18:11:03+00:00"
+          expires_at:
+            type: string
+            example: "2023-02-06T18:11:03+00:00"
 
    
-   
+    the above schema matches the above schema
+       results = [{
+      'uuid': '68f126b0-1ceb-4a33-88be-d90fa7109eee',
+      'handle':  'lightBright',
+      'message': 'I lost half of my light pieces',
+      'created_at': (now - timedelta(days=2)).isoformat(),
+      'expires_at': (now + timedelta(days=5)).isoformat(),
+      'likes_count': 5,
+      'replies_count': 1,
+      'reposts_count': 0,
+      'replies': [{
+        'uuid': '26e12864-1c26-5c3a-9658-97a10f8fea67',
+        'reply_to_activity_uuid': '68f126b0-1ceb-4a33-88be-d90fa7109eee',
+        'handle':  'worf',
+        'message': 'this post has no honor!',
+        'likes_count': 0,
+        'replies_count': 0,
+        'reposts_count': 0,
+        'created_at': (now - timedelta(days=2)).isoformat()
+      }],
+    }
+    ]
 
