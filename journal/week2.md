@@ -19,7 +19,11 @@
   
   ![image](https://user-images.githubusercontent.com/97846441/222877909-31319718-6ef3-4900-9dd3-821fd10f92c2.png)
 
-  
+ ### Rollbar implementation
+  Successfully implemented Rollbar watch logs
+  https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/00e6b8998d8bd5ffe67000f226386c468939a1e9/backend-flask/app.py#L35
+  ![image](https://user-images.githubusercontent.com/97846441/222880004-cdf6f8ea-8a04-4a84-9e3f-ba4c87458cb3.png)
+
   
   --------------------------------------------------------------------------------------
   ### Below are study notes for self
