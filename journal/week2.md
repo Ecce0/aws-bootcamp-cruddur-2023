@@ -10,6 +10,15 @@
   ![image](https://user-images.githubusercontent.com/97846441/222874732-80f3cded-9526-4d4f-b1a5-3bc422f4637f.png)
   ![image](https://user-images.githubusercontent.com/97846441/222874832-205b5549-b8c5-4560-b9b3-95cdfcc0e10c.png)
   
+ 
+ ### Cloud Watch logs
+  Successfully implemented cloud watch logs - turned it ( and aws XRAY) off to be cost-conscience
+  https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/dba5635e9bf2d3259609ac24e09e6e2a88ac987f/backend-flask/app.py#L35
+  https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/dba5635e9bf2d3259609ac24e09e6e2a88ac987f/backend-flask/services/home_activities.py#L8 - I passed in logger, but removed to make sure there aren't any cloudwatch log costs is occuring 
+  
+  
+  ![image](https://user-images.githubusercontent.com/97846441/222877909-31319718-6ef3-4900-9dd3-821fd10f92c2.png)
+
   
   
   --------------------------------------------------------------------------------------
