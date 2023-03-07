@@ -1,5 +1,5 @@
 import './MessageGroupPage.css';
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 
 import DesktopNavigation  from '../components/DesktopNavigation';
@@ -10,12 +10,12 @@ import MessagesForm from '../components/MessageForm';
 // [TODO] Authenication
 import Cookies from 'js-cookie'
 
-export default function MessageGroupPage() {
-  const [messageGroups, setMessageGroups] = React.useState([]);
-  const [messages, setMessages] = React.useState([]);
-  const [popped, setPopped] = React.useState([]);
-  const [user, setUser] = React.useState(null);
-  const dataFetchedRef = React.useRef(false);
+const MessageGroupPage = () => {
+  const [messageGroups, setMessageGroups] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [popped, setPopped] = useState([]);
+  const [user, setUser] = useState(null);
+  const dataFetchedRef = useRef(false);
   const params = useParams();
 
   const loadMessageGroupsData = async () => {
@@ -64,7 +64,7 @@ export default function MessageGroupPage() {
     }
   };
 
-  React.useEffect(()=>{
+  useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
@@ -86,3 +86,5 @@ export default function MessageGroupPage() {
     </article>
   );
 }
+
+export default MessageGroupFeed
