@@ -1,11 +1,13 @@
 import './CrudButton.css';
 
-export default function CrudButton(props) {
+const CrudButton = () => {
   const pop_activities_form = (event) => {
-    props.setPopped(true);
+    setPopped(true);
   }
 
   return (
     <button onClick={pop_activities_form} className='post' href="#">Crud</button>
   );
 }
+
+export default CrudButton

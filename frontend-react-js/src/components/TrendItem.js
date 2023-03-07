@@ -1,6 +1,6 @@
 import './TrendItem.css';
 
-export default function TrendItem(props) {
+const TrendItem = ({ hashtag, count }) => {
   const commify = (n) => {
     var parts = n.toString().split(".");
     const numberPart = parts[0];
@@ -11,8 +11,10 @@ export default function TrendItem(props) {
 
   return (
     <a className="trending" href="#">
-      <span className="hashtag">#{props.hashtag}</span>
-      <span className="count">#{commify(props.count)} cruds</span>
+      <span className="hashtag">#{hashtag}</span>
+      <span className="count">#{commify(count)} cruds</span>
     </a>
   );
 }
+
+export default TrendItem

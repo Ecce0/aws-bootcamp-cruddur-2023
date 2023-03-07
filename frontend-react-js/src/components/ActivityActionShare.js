@@ -1,6 +1,6 @@
 import {ReactComponent as ShareIcon} from './svg/share.svg';
 
-export default function ActivityActionRepost(props) { 
+const ActivityActionRepost = () => { 
   const onclick = (event) => {
     console.log('trigger share')
   }
@@ -11,3 +11,5 @@ export default function ActivityActionRepost(props) {
     </div>
   )
 }
+
+export default ActivityActionRepost

@@ -1,7 +1,7 @@
 import './JoinSection.css';
 import { Link } from "react-router-dom";
 
-export default function JoinSection(props) {
+const JoinSection = () => {
   return (
     <div className="join">
       <div className='join-title'>
@@ -27,3 +27,5 @@ export default function JoinSection(props) {
     </div>
   );
 }
+
+export default JoinSection

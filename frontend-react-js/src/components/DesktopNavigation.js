@@ -4,31 +4,31 @@ import DesktopNavigationLink from '../components/DesktopNavigationLink';
 import CrudButton from '../components/CrudButton';
 import ProfileInfo from '../components/ProfileInfo';
 
-export default function DesktopNavigation(props) {
+const DesktopNavigation = ({ user, active }) => {
 
   let button;
   let profile;
   let notificationsLink;
   let messagesLink;
   let profileLink;
-  if (props.user) {
-    button = <CrudButton setPopped={props.setPopped} />;
-    profile = <ProfileInfo user={props.user} />;
+  if (user) {
+    button = <CrudButton setPopped={setPopped} />;
+    profile = <ProfileInfo user={user} />;
     notificationsLink = <DesktopNavigationLink 
       url="/notifications" 
       name="Notifications" 
       handle="notifications" 
-      active={props.active} />;
+      active={active} />;
     messagesLink = <DesktopNavigationLink 
       url="/messages"
       name="Messages"
       handle="messages" 
-      active={props.active} />
+      active={active} />
     profileLink = <DesktopNavigationLink 
       url="/@andrewbrown" 
       name="Profile"
       handle="profile"
-      active={props.active} />
+      active={active} />
   }
 
   return (
@@ -37,16 +37,18 @@ export default function DesktopNavigation(props) {
       <DesktopNavigationLink url="/" 
         name="Home"
         handle="home"
-        active={props.active} />
+        active={active} />
       {notificationsLink}
       {messagesLink}
       {profileLink}
       <DesktopNavigationLink url="/#" 
         name="More" 
         handle="more"
-        active={props.active} />
+        active={active} />
       {button}
       {profile}
     </nav>
   );
 }
+
+export default DesktopNavigation

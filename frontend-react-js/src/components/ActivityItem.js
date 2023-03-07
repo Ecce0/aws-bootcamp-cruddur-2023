@@ -1,20 +1,19 @@
 import './ActivityItem.css';
-
 import ActivityContent  from '../components/ActivityContent';
 import ActivityActionReply  from '../components/ActivityActionReply';
 import ActivityActionRepost  from '../components/ActivityActionRepost';
 import ActivityActionLike  from '../components/ActivityActionLike';
 import ActivityActionShare  from '../components/ActivityActionShare';
 
-export default function ActivityItem(props) {
+const ActivityItem = ({ activity }) => {
 
   let replies;
-  if (props.activity.replies) {
+  if (activity.replies) {
     replies = <div className="replies">
-                {props.activity.replies.map(reply => {
+                {activity.replies.map(reply => {
                 return  <ActivityItem 
-                  setReplyActivity={props.setReplyActivity} 
-                  setPopped={props.setPopped} 
+                  setReplyActivity={setReplyActivity} 
+                  setPopped={setPopped} 
                   key={reply.uuid} 
                   activity={reply} 
                   />
@@ -24,14 +23,16 @@ export default function ActivityItem(props) {
 
   return (
     <div className='activity_item'>
-      <ActivityContent activity={props.activity} />
+      <ActivityContent activity={activity} />
       <div className="activity_actions">
-        <ActivityActionReply setReplyActivity={props.setReplyActivity} activity={props.activity} setPopped={props.setPopped} activity_uuid={props.activity.uuid} count={props.activity.replies_count}/>
-        <ActivityActionRepost activity_uuid={props.activity.uuid} count={props.activity.reposts_count}/>
-        <ActivityActionLike activity_uuid={props.activity.uuid} count={props.activity.likes_count}/>
-        <ActivityActionShare activity_uuid={props.activity.uuid} />
+        <ActivityActionReply setReplyActivity={setReplyActivity} activity={activity} setPopped={setPopped} activity_uuid={activity.uuid} count={activity.replies_count}/>
+        <ActivityActionRepost activity_uuid={activity.uuid} count={activity.reposts_count}/>
+        <ActivityActionLike activity_uuid={activity.uuid} count={activity.likes_count}/>
+        <ActivityActionShare activity_uuid={activity.uuid} />
       </div>
       {replies}
     </div>
   );
 }
+
+export default ActivityItem

@@ -1,13 +1,13 @@
 import {ReactComponent as HeartIcon} from './svg/heart.svg';
 
-export default function ActivityActionLike(props) { 
+const ActivityActionLike = ({ count }) => { 
   const onclick = (event) => {
     console.log('toggle like/unlike')
   }
 
   let counter;
-  if (props.count > 0) {
-    counter = <div className="counter">{props.count}</div>;
+  if (count > 0) {
+    counter = <div className="counter">{count}</div>;
   }
 
   return (
@@ -17,3 +17,5 @@ export default function ActivityActionLike(props) {
     </div>
   )
 }
+
+export default ActivityActionLike

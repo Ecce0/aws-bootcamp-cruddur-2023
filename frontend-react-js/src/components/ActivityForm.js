@@ -1,12 +1,12 @@
 import './ActivityForm.css';
-import React from "react";
+import React, { useState } from "react";
 import process from 'process';
 import {ReactComponent as BombIcon} from './svg/bomb.svg';
 
-export default function ActivityForm(props) {
-  const [count, setCount] = React.useState(0);
-  const [message, setMessage] = React.useState('');
-  const [ttl, setTtl] = React.useState('7-days');
+const ActivityForm = (popped) => {
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState('');
+  const [ttl, setTtl] = useState('7-days');
 
   const classes = []
   classes.push('count')
@@ -33,12 +33,12 @@ export default function ActivityForm(props) {
       let data = await res.json();
       if (res.status === 200) {
         // add activity to the feed
-        props.setActivities(current => [data,...current]);
+        popped.setActivities(current => [data,...current]);
         // reset and close the form
         setCount(0)
         setMessage('')
         setTtl('7-days')
-        props.setPopped(false)
+        popped.setPopped(false)
       } else {
         console.log(res)
       }
@@ -56,7 +56,7 @@ export default function ActivityForm(props) {
     setTtl(event.target.value);
   }
 
-  if (props.popped === true) {
+  if (popped.popped === true) {
     return (
       <form 
         className='activity_form'

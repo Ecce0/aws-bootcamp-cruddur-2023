@@ -5,17 +5,17 @@ import {ReactComponent as ProfileIcon} from './svg/profile.svg';
 import {ReactComponent as MoreIcon} from './svg/more.svg';
 import {ReactComponent as MessagesIcon} from './svg/messages.svg';
 
-export default function DesktopNavigationLink(props) {
+const DesktopNavigationLink = ({ handle, active, url, name }) => {
   const classes = ()=> {
     const classes = ['primary']
-    if (props.handle === props.active) {
+    if (handle === active) {
       classes.push('active')
     }
     return classes.join(' ')
   }
 
   const icon = ()=> {
-    switch(props.handle){
+    switch(handle){
       case 'home':
         return <HomeIcon className='icon' />
         break;
@@ -35,9 +35,11 @@ export default function DesktopNavigationLink(props) {
   }
 
   return (
-    <Link to={props.url} className={classes()} href="#">
+    <Link to={url} className={classes()} href="#">
       {icon()}
-      <span>{props.name}</span>
+      <span>{name}</span>
     </Link>
   );
 }
+
+export default DesktopNavigationLink

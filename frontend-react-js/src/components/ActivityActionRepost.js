@@ -1,13 +1,13 @@
 import {ReactComponent as RepostIcon} from './svg/repost.svg';
 
-export default function ActivityActionRepost(props) { 
+const ActivityActionRepost = ({ count }) => { 
   const onclick = (event) => {
     console.log('trigger repost')
   }
 
   let counter;
-  if (props.count > 0) {
-    counter = <div className="counter">{props.count}</div>;
+  if (count > 0) {
+    counter = <div className="counter">{count}</div>;
   }
 
   return (
@@ -17,3 +17,5 @@ export default function ActivityActionRepost(props) {
     </div>
   )
 }
+
+export default ActivityActionRepost

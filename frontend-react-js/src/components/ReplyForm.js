@@ -1,13 +1,12 @@
 import './ReplyForm.css';
-import React from "react";
+import React, { useState } from "react";
 import process from 'process';
 import {ReactComponent as BombIcon} from './svg/bomb.svg';
-
 import ActivityContent  from '../components/ActivityContent';
 
-export default function ReplyForm(props) {
-  const [count, setCount] = React.useState(0);
-  const [message, setMessage] = React.useState('');
+const ReplyForm = ({ activity, popped }) => {
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState('');
 
   const classes = []
   classes.push('count')
@@ -18,7 +17,7 @@ export default function ReplyForm(props) {
   const onsubmit = async (event) => {
     event.preventDefault();
     try {
-      const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/${props.activity.uuid}/reply`
+      const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/${activity.uuid}/reply`
       const res = await fetch(backend_url, {
         method: "POST",
         headers: {
@@ -33,17 +32,17 @@ export default function ReplyForm(props) {
       if (res.status === 200) {
         // add activity to the feed
 
-        let activities_deep_copy = JSON.parse(JSON.stringify(props.activities))
+        let activities_deep_copy = JSON.parse(JSON.stringify(activities))
         let found_activity = activities_deep_copy.find(function (element) {
-          return element.uuid ===  props.activity.uuid;
+          return element.uuid ===  activity.uuid;
         });
         found_activity.replies.push(data)
 
-        props.setActivities(activities_deep_copy);
+        setActivities(activities_deep_copy);
         // reset and close the form
         setCount(0)
         setMessage('')
-        props.setPopped(false)
+        setPopped(false)
       } else {
         console.log(res)
       }
@@ -58,12 +57,12 @@ export default function ReplyForm(props) {
   }
 
   let content;
-  if (props.activity){
-    content = <ActivityContent activity={props.activity} />;
+  if (activity){
+    content = <ActivityContent activity={activity} />;
   }
 
 
-  if (props.popped === true) {
+  if (popped === true) {
     return (
       <div className="popup_form_wrap">
         <div className="popup_form">
@@ -94,3 +93,5 @@ export default function ReplyForm(props) {
     );
   }
 }
+
+export default ReplyForm

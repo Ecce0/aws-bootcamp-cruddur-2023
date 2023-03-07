@@ -1,17 +1,19 @@
 import './ActivityFeed.css';
 import ActivityItem from './ActivityItem';
 
-export default function ActivityFeed(props) {
+const ActivityFeed = ({ title, activities }) => {
   return (
     <div className='activity_feed'>
       <div className='activity_feed_heading'>
-        <div className='title'>{props.title}</div>
+        <div className='title'>{title}</div>
       </div>
       <div className='activity_feed_collection'>
-        {props.activities.map(activity => {
-        return  <ActivityItem setReplyActivity={props.setReplyActivity} setPopped={props.setPopped} key={activity.uuid} activity={activity} />
+        {activities.map(activity => {
+        return  <ActivityItem setReplyActivity={setReplyActivity} setPopped={setPopped} key={activity.uuid} activity={activity} />
         })}
       </div>
     </div>
   );
 }
+
+export default ActivityFeed

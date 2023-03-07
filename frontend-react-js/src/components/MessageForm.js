@@ -1,11 +1,11 @@
 import './MessageForm.css';
-import React from "react";
+import React, { useState } from "react";
 import process from 'process';
 import { useParams } from 'react-router-dom';
 
-export default function ActivityForm(props) {
-  const [count, setCount] = React.useState(0);
-  const [message, setMessage] = React.useState('');
+const MessageForm = () => {
+  const [count, setCount] = useState(0);
+  const [message, setMessage] = useState('');
   const params = useParams();
 
   const classes = []
@@ -32,7 +32,7 @@ export default function ActivityForm(props) {
       });
       let data = await res.json();
       if (res.status === 200) {
-        props.setMessages(current => [...current,data]);
+        setMessages(current => [...current,data]);
       } else {
         console.log(res)
       }
@@ -64,3 +64,5 @@ export default function ActivityForm(props) {
     </form>
   );
 }
+
+export default MessageForm
