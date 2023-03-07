@@ -1,16 +1,16 @@
 import './ConfirmationPage.css';
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import {ReactComponent as Logo} from '../components/svg/logo.svg';
 
 // [TODO] Authenication
 import Cookies from 'js-cookie'
 
-export default function ConfirmationPage() {
-  const [email, setEmail] = React.useState('');
-  const [code, setCode] = React.useState('');
-  const [errors, setErrors] = React.useState('');
-  const [codeSent, setCodeSent] = React.useState(false);
+const ConfirmationPage = () => {
+  const [email, setEmail] = useState('');
+  const [code, setCode] = useState('');
+  const [errors, setErrors] = useState('');
+  const [codeSent, setCodeSent] = useState(false);
 
   const params = useParams();
 
@@ -60,7 +60,7 @@ export default function ConfirmationPage() {
     code_button = <button className="resend" onClick={resend_code}>Resend Activation Code</button>;
   }
 
-  React.useEffect(()=>{
+  useEffect(()=>{
     if (params.email) {
       setEmail(params.email)
     }
@@ -105,3 +105,5 @@ export default function ConfirmationPage() {
     </article>
   );
 }
+
+export default ConfirmationPage
