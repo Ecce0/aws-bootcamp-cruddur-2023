@@ -35,9 +35,9 @@ const DesktopNavigationLink = ({ handle, active, url, name }) => {
   // }
 
   if(handle === 'home'){
-    return <HomeIcon classname='icon' />
+    return <HomeIcon className='icon' />
   } else if (handle === 'notifications'){
-    return <NotificationsIcon classname='icon' />
+    return <NotificationsIcon className='icon' />
   } else if (handle === 'profile'){
     return <ProfileIcon className='icon' />
   } else if (handle === 'more'){
