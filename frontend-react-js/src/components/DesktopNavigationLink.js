@@ -48,7 +48,7 @@ const DesktopNavigationLink = ({ handle, active, url, name }) => {
 
   return (
     <Link to={url} className={classes()} href="/#">
-      {/* refactor this component*/}
+      {handle}
       <span>{name}</span>
     </Link>
   );

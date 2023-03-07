@@ -1,6 +1,5 @@
 import './NotificationsFeedPage.css';
-import React from "react";
-
+import React, { useState, useRef, useEffect } from "react";
 import DesktopNavigation  from '../components/DesktopNavigation';
 import DesktopSidebar     from '../components/DesktopSidebar';
 import ActivityFeed from '../components/ActivityFeed';
@@ -10,13 +9,13 @@ import ReplyForm from '../components/ReplyForm';
 // [TODO] Authenication
 import Cookies from 'js-cookie'
 
-export default function NotificationsFeedPage() {
-  const [activities, setActivities] = React.useState([]);
-  const [popped, setPopped] = React.useState(false);
-  const [poppedReply, setPoppedReply] = React.useState(false);
-  const [replyActivity, setReplyActivity] = React.useState({});
-  const [user, setUser] = React.useState(null);
-  const dataFetchedRef = React.useRef(false);
+const NotificationsFeedPage = () => {
+  const [activities, setActivities] = useState([]);
+  const [popped, setPopped] = useState(false);
+  const [poppedReply, setPoppedReply] = useState(false);
+  const [replyActivity, setReplyActivity] = useState({});
+  const [user, setUser] = useState(null);
+  const dataFetchedRef = useRef(false);
 
   const loadData = async () => {
     try {
@@ -46,7 +45,7 @@ export default function NotificationsFeedPage() {
     }
   };
 
-  React.useEffect(()=>{
+  useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
@@ -82,3 +81,5 @@ export default function NotificationsFeedPage() {
     </article>
   );
 }
+
+export default NotificationsFeedPage

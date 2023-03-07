@@ -1,5 +1,5 @@
 import './UserFeedPage.css';
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from 'react-router-dom';
 
 import DesktopNavigation  from '../components/DesktopNavigation';
@@ -10,11 +10,11 @@ import ActivityForm from '../components/ActivityForm';
 // [TODO] Authenication
 import Cookies from 'js-cookie'
 
-export default function UserFeedPage() {
-  const [activities, setActivities] = React.useState([]);
-  const [popped, setPopped] = React.useState([]);
-  const [user, setUser] = React.useState(null);
-  const dataFetchedRef = React.useRef(false);
+const UserFeedPage = () => {
+  const [activities, setActivities] = useState([]);
+  const [popped, setPopped] = useState([]);
+  const [user, setUser] = useState(null);
+  const dataFetchedRef = useRef(false);
 
   const params = useParams();
   const title = `@${params.handle}`;
@@ -47,7 +47,7 @@ export default function UserFeedPage() {
     }
   };
 
-  React.useEffect(()=>{
+  useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
@@ -68,3 +68,5 @@ export default function UserFeedPage() {
     </article>
   );
 }
+
+export default UserFeedPage

@@ -1,5 +1,5 @@
 import './MessageGroupsPage.css';
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
@@ -7,11 +7,11 @@ import MessageGroupFeed from '../components/MessageGroupFeed';
 // [TODO] Authenication
 import Cookies from 'js-cookie'
 
-export default function MessageGroupsPage() {
-  const [messageGroups, setMessageGroups] = React.useState([]);
-  const [popped, setPopped] = React.useState([]);
-  const [user, setUser] = React.useState(null);
-  const dataFetchedRef = React.useRef(false);
+const MessageGroupsPage = () => {
+  const [messageGroups, setMessageGroups] = useState([]);
+  const [popped, setPopped] = useState([]);
+  const [user, setUser] = useState(null);
+  const dataFetchedRef = useRef(false);
 
   //remember to remove the next line, putting a console.log to remove errors in docker logs
   console.log(popped)
@@ -44,7 +44,7 @@ export default function MessageGroupsPage() {
     }
   };
 
-  React.useEffect(()=>{
+  useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
@@ -63,3 +63,4 @@ export default function MessageGroupsPage() {
     </article>
   );
 }
+export default MessageGroupsPage
