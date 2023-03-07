@@ -13,6 +13,9 @@ export default function MessageGroupsPage() {
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
 
+  //remember to remove the next line, putting a console.log to remove errors in docker logs
+  console.log(popped)
+
   const loadData = async () => {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/message_groups`

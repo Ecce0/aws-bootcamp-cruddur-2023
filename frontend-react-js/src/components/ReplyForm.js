@@ -1,12 +1,14 @@
 import './ReplyForm.css';
 import React, { useState } from "react";
 import process from 'process';
-import {ReactComponent as BombIcon} from './svg/bomb.svg';
+//import {ReactComponent as BombIcon} from './svg/bomb.svg';
 import ActivityContent  from '../components/ActivityContent';
 
-const ReplyForm = ({ activity, popped }) => {
+const ReplyForm = ({ activity }) => {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
+  const [ popped, setPopped ] = useState()
+  const [ activities, setActivities ] = useState()
 
   const classes = []
   classes.push('count')

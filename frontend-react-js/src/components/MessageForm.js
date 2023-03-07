@@ -32,7 +32,7 @@ const MessageForm = () => {
       });
       let data = await res.json();
       if (res.status === 200) {
-        setMessages(current => [...current,data]);
+        setMessage(current => [...current,data]);
       } else {
         console.log(res)
       }

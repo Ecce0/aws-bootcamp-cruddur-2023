@@ -54,6 +54,7 @@ export default function UserFeedPage() {
 
     loadData();
     checkAuth();
+    // eslint-disable-next-line
   }, [])
 
   return (

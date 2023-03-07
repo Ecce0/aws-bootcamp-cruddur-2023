@@ -10,7 +10,7 @@ const TrendItem = ({ hashtag, count }) => {
   }
 
   return (
-    <a className="trending" href="#">
+    <a className="trending" href="/#">
       <span className="hashtag">#{hashtag}</span>
       <span className="count">#{commify(count)} cruds</span>
     </a>

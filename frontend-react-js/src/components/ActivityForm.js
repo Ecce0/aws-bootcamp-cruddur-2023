@@ -91,3 +91,5 @@ const ActivityForm = (popped) => {
     );
   }
 }
+
+export default ActivityForm

@@ -3,8 +3,6 @@ import {ReactComponent as ElipsesIcon} from './svg/elipses.svg';
 import React, { useState } from "react";
 import { Auth } from 'aws-amplify';
 
-// [TODO] Authenication
-import Cookies from 'js-cookie'
 
 const ProfileInfo = ({user}) => {
   const [popped, setPopped] = useState(false);

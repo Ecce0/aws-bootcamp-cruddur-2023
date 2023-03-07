@@ -18,6 +18,9 @@ const MessageGroupPage = () => {
   const dataFetchedRef = useRef(false);
   const params = useParams();
 
+  //remember to remove the next line, putting a console.log to remove errors in docker logs
+  console.log(popped)
+
   const loadMessageGroupsData = async () => {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/message_groups`
@@ -72,6 +75,7 @@ const MessageGroupPage = () => {
     loadMessageGroupsData();
     loadMessageGroupData();
     checkAuth();
+    // eslint-disable-next-line
   }, [])
   return (
     <article>
@@ -87,4 +91,4 @@ const MessageGroupPage = () => {
   );
 }
 
-export default MessageGroupFeed
+export default MessageGroupPage

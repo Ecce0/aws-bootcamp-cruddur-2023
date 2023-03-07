@@ -4,8 +4,14 @@ import ActivityActionReply  from '../components/ActivityActionReply';
 import ActivityActionRepost  from '../components/ActivityActionRepost';
 import ActivityActionLike  from '../components/ActivityActionLike';
 import ActivityActionShare  from '../components/ActivityActionShare';
+import React, { useState } from 'react'
 
 const ActivityItem = ({ activity }) => {
+  const [ popped, setPopped ] = useState()
+  const [replyActivity, setReplyActivity ] = useState()
+
+  //remove these lines when its time to
+  console.log(popped, replyActivity)
 
   let replies;
   if (activity.replies) {
