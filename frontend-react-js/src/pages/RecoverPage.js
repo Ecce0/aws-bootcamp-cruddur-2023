@@ -18,7 +18,7 @@ const RecoverPage = () => {
     setErrors('')
     Auth.forgotPassword(username)
     .then((data) => setFormState('confirm_code') )
-    .catch((err) => setErrors(err.message) );
+    .catch((err) => setErrors(err.message) );        
     return false
   }  
 
@@ -26,12 +26,12 @@ const RecoverPage = () => {
   const onsubmit_confirm_code = async (event) => {
     event.preventDefault();
     setErrors('')
-    if (password === passwordAgain){
+    if (password == passwordAgain){
       Auth.forgotPasswordSubmit(username, code, password)
       .then((data) => setFormState('success'))
       .catch((err) => setErrors(err.message) );
     } else {
-      setErrors('Passwords do not match')
+      setCognitoErrors('Passwords do not match')
     }
     return false
   }

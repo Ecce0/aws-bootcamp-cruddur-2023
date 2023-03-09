@@ -20,7 +20,7 @@ const HomeFeedPage = () => {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
       const res = await fetch(backend_url, {
-        headers: {
+        hheaders: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
         },
         method: "GET"
