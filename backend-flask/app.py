@@ -15,6 +15,8 @@ from services.messages import *
 from services.create_message import *
 from services.show_activity import *
 
+from lib.cognito_jwt_token import CognitoJwtToken, extract_access_token, TokenVerifyError
+
 
 # Honeycomb
 from opentelemetry import trace
@@ -69,8 +71,17 @@ XRayMiddleware(app, xray_recorder)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
 
+cognito_jwt_token = CognitoJwtToken(
+  user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"),
+  user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"),
+  region=os.getenv("AWS_DEFAULT_REGION")
+)
+
+
 # Rollbar again
 rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+
+
 @app.before_first_request
 def init_rollbar():
     """init rollbar module"""
@@ -92,18 +103,21 @@ frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
 origins = [frontend, backend]
 cors = CORS(
-  app, 
+  app,
   resources={r"/api/*": {"origins": origins}},
-  headers=['Content-Type', 'Authorization'], 
+  headers=['Content-Type', 'Authorization'],
   expose_headers='Authorization',
   methods="OPTIONS,GET,HEAD,POST"
 )
 
+
 @app.after_request
 def after_request(response):
     timestamp = strftime('[%Y-%b-%d %H:%M]')
-    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
+    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr,
+                 request.method, request.scheme, request.full_path, response.status)
     return response
+
 
 @app.route('/rollbar/test')
 def rollbar_test():
@@ -153,8 +167,20 @@ def data_create_message():
 
 @app.route("/api/activities/home", methods=['GET'])
 @xray_recorder.capture('activities_home')
-def data_home():    
+def data_home():
     data = HomeActivities.run()
+    access_token = extract_access_token(request.headers)
+    try:
+      claims = cognito_jwt_token.verify(access_token)
+      # authenicatied request
+      app.logger.debug("authenicated")
+      app.logger.debug(claims)
+      app.logger.debug(claims['username'])
+      data = HomeActivities.run(cognito_user_id=claims['username'])
+    except TokenVerifyError as e:
+      # unauthenicatied request
+      app.logger.debug(e)
+      app.logger.debug("unauthenicated")    
     return data, 200
 
 
