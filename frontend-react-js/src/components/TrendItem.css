@@ -1,7 +1,7 @@
 .trendings {
   display: flex;
   flex-direction: column;
-  background: #000;
+  background-color: rgb(235, 127, 27);
   border-radius: 8px;
   margin-top: 24px;
 }
@@ -10,7 +10,9 @@
   font-size: 16px;
   color: #fff;
   padding: 16px;
-  border-bottom: solid 1px rgb(31,36,49);
+  border-bottom: solid 3px rgb(255, 255, 255);
+  font-weight: 700;
+  margin: 0 20px
 }
 
 .trendings a {
@@ -26,5 +28,5 @@
 
 .trendings a span.count {
   font-size: 13px;
-  color: rgba(255,255,255,0.5)
+  color: rgba(255, 255, 255, 0.747)
 }

@@ -1,7 +1,7 @@
 .join {
   display: flex;
   flex-direction: column;
-  background: #000;
+  background: rgb(235, 127, 27);
   border-radius: 8px;
   margin-top: 24px;
 }
@@ -10,7 +10,9 @@
   font-size: 16px;
   color: #fff;
   padding: 16px;
-  border-bottom: solid 1px rgb(31,36,49);
+  border-bottom: solid 3px rgb(255, 255, 255);
+  margin: 0 20px;
+  font-weight: bold;
 }
 
 .join p {
@@ -26,8 +28,8 @@
 
 .join-content a.action {
   display: block;
-  background: rgba(149,0,255,1);
-  color: #fff;
+  background: rgb(255, 255, 255);
+  color: rgb(235, 127, 27);
   border: none;
   text-decoration: none;
   border-radius: 999px;
@@ -40,7 +42,7 @@
 }
 
 .join-content a.subaction {
-  color: rgba(149,0,255,1);
+  color: rgb(255, 255, 255);
   text-align: center;
   text-decoration: none;
   display: block;
