@@ -10,7 +10,7 @@
 }
 
 .activity_content_wrap .activity_avatar {
-  background: rgb(149,0,255);
+  background: rgb(4, 202, 192);
   height: 60px;
   width: 60px;
   border-radius: 999px;
@@ -30,11 +30,11 @@
 
 .activity_content a.activity_identity .display_name {
   font-weight: 800;
-  color: #fff;
+  color: #ffffff;
 }
 
 .activity_content  a.activity_identity .handle {
-  color: rgb(255,255,255,0.5);
+  color: rgb(72,77,95);
 }
 
 .activity_content .activity_times {
@@ -61,7 +61,7 @@
 }
 
 .activity_content .message {
-  color: #fff;
+  color: rgb(72,77,95);
   font-size: 16px;
   margin-top: 8px;
 }

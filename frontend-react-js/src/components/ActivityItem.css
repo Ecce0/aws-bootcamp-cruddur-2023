@@ -1,7 +1,7 @@
 .activity_item {
   display: flex;
   flex-direction: column;
-  border-bottom: solid 1px rgb(31,36,49);
+  border-bottom: solid 3px rgb(255, 255, 255);
   overflow: hidden;
   padding: 16px;
 }
@@ -27,14 +27,14 @@
 }
 
 .activity_item .activity_actions .action .counter{
-  color: rgba(255,255,255,0.8);
+  color: rgb(72,77,95);
   font-weight: 800;
 }
 
 .activity_item .activity_actions .icon{
   height: 18px;
   width: 18px;
-  fill: #fff;
+  fill: rgb(72,77,95);
 }
 
 .activity_item .activity_actions .action:hover {
