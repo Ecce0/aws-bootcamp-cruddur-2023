@@ -3,7 +3,7 @@
 ## Reequired Homework
 
  ### Set up Cognito User Pool 
-     ![image](https://user-images.githubusercontent.com/97846441/224522373-b9572f6a-5778-4778-bdde-68d4ca7f401b.png)
+   ![image](https://user-images.githubusercontent.com/97846441/224522373-b9572f6a-5778-4778-bdde-68d4ca7f401b.png)
 
 
  ### Implement custom sign in page
