@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import process from 'process';
 import {ReactComponent as BombIcon} from './svg/bomb.svg';
 
-const ActivityForm = (popped) => {
+const ActivityForm = () => {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
   const [ttl, setTtl] = useState('7-days');
+  const [ popped, setPopped ] = useState()
+  const [ activities, setActivities ] = useState()
 
   const classes = []
   classes.push('count')
@@ -33,12 +35,12 @@ const ActivityForm = (popped) => {
       let data = await res.json();
       if (res.status === 200) {
         // add activity to the feed
-        popped.setActivities(current => [data,...current]);
+        setActivities(current => [data,...current]);
         // reset and close the form
         setCount(0)
         setMessage('')
         setTtl('7-days')
-        popped.setPopped(false)
+        setPopped(false)
       } else {
         console.log(res)
       }
@@ -56,7 +58,7 @@ const ActivityForm = (popped) => {
     setTtl(event.target.value);
   }
 
-  if (popped.popped === true) {
+  if (popped === true) {
     return (
       <form 
         className='activity_form'
