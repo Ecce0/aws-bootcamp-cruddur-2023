@@ -7,7 +7,7 @@ import ActivityContent  from '../components/ActivityContent';
 const ReplyForm = ({ activity }) => {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
-  const [ popped, setPopped ] = useState()
+  const [ popped, setPopped ] = useState(false)
   const [ activities, setActivities ] = useState()
 
   const classes = []

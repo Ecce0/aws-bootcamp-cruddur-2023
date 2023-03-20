@@ -7,7 +7,7 @@ const ActivityForm = () => {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
   const [ttl, setTtl] = useState('7-days');
-  const [ popped, setPopped ] = useState()
+  const [ popped, setPopped ] = useState(true)
   const [ activities, setActivities ] = useState()
 
   const classes = []
