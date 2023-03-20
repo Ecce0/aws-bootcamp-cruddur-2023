@@ -35,7 +35,7 @@ const ActivityForm = () => {
       let data = await res.json();
       if (res.status === 200) {
         // add activity to the feed
-        setActivities(current => [data,...current]);
+        setActivities(data);
         // reset and close the form
         setCount(0)
         setMessage('')

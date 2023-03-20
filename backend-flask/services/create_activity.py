@@ -43,7 +43,7 @@ class CreateActivity:
       model['data'] = {
         'uuid': uuid.uuid4(),
         'display_name': 'Erica CoCo',
-        'handle':  e_coco,
+        'handle':  'e_coco',
         'message': message,
         'created_at': now.isoformat(),
         'expires_at': (now + ttl_offset).isoformat()
