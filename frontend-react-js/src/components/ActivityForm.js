@@ -10,10 +10,6 @@ const ActivityForm = ({ user_handle }) => {
   const [ popped, setPopped ] = useState(true)
   const [ activities, setActivities ] = useState()
 
-
-  console.log(activities)
-
-
   const classes = []
   classes.push('count')
   if (240-count < 0){
