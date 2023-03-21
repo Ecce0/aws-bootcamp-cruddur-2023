@@ -3,12 +3,16 @@ import React, { useState } from "react";
 import process from 'process';
 import {ReactComponent as BombIcon} from './svg/bomb.svg';
 
-const ActivityForm = () => {
+const ActivityForm = ({ user_handle }) => {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
   const [ttl, setTtl] = useState('7-days');
   const [ popped, setPopped ] = useState(true)
   const [ activities, setActivities ] = useState()
+
+
+  console.log(activities)
+
 
   const classes = []
   classes.push('count')
@@ -28,6 +32,7 @@ const ActivityForm = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          user_handle: user_handle.handle,
           message: message,
           ttl: ttl
         }),
