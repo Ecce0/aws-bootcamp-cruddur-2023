@@ -8,7 +8,7 @@ const ActivityForm = ({ user_handle }) => {
   const [message, setMessage] = useState('');
   const [ttl, setTtl] = useState('7-days');
   const [ popped, setPopped ] = useState(true)
-  const [ activities, setActivities ] = useState()
+  const [activities, setActivities] = useState();
 
   const classes = []
   classes.push('count')
@@ -16,11 +16,10 @@ const ActivityForm = ({ user_handle }) => {
     classes.push('err')
   }
 
-  const onsubmit = async (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities`
-      console.log('onsubmit payload', message)
       const res = await fetch(backend_url, {
         method: "POST",
         headers: {
@@ -36,7 +35,7 @@ const ActivityForm = ({ user_handle }) => {
       let data = await res.json();
       if (res.status === 200) {
         // add activity to the feed
-        setActivities(data);
+        setActivities(prevState => [{data, ...prevState}]);
         // reset and close the form
         setCount(0)
         setMessage('')
@@ -63,7 +62,7 @@ const ActivityForm = ({ user_handle }) => {
     return (
       <form 
         className='activity_form'
-        onSubmit={onsubmit}
+        onSubmit={onSubmit}
       >
         <textarea
           type="text"
