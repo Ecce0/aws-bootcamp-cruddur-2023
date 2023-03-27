@@ -5,9 +5,7 @@ import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
 import MessagesFeed from '../components/MessageFeed';
 import MessagesForm from '../components/MessageForm';
-
-// [TODO] Authenication
-import Cookies from 'js-cookie'
+import checkAuth from '../lib/CheckAuth'
 
 const MessageGroupPage = () => {
   const [messageGroups, setMessageGroups] = useState([]);
@@ -17,6 +15,7 @@ const MessageGroupPage = () => {
   const dataFetchedRef = useRef(false);
   const params = useParams();
 
+
   //remember to remove the next line, putting a console.log to remove errors in docker logs
   console.log(popped)
 
@@ -24,6 +23,9 @@ const MessageGroupPage = () => {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/message_groups`
       const res = await fetch(backend_url, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`
+        },
         method: "GET"
       });
       let resJson = await res.json();
@@ -55,17 +57,6 @@ const MessageGroupPage = () => {
     }
   };  
 
-  const checkAuth = async () => {
-    console.log('checkAuth')
-    // [TODO] Authenication
-    if (Cookies.get('user.logged_in')) {
-      setUser({
-        display_name: Cookies.get('user.name'),
-        handle: Cookies.get('user.username')
-      })
-    }
-  };
-
   useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
@@ -73,9 +64,11 @@ const MessageGroupPage = () => {
 
     loadMessageGroupsData();
     loadMessageGroupData();
-    checkAuth();
+    checkAuth(setUser);
     // eslint-disable-next-line
   }, [])
+
+
   return (
     <article>
       <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
