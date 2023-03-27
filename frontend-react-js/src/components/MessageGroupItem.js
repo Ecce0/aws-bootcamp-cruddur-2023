@@ -2,9 +2,12 @@ import './MessageGroupItem.css';
 import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
 import { useParams } from 'react-router-dom';
+import React, { useState } from 'react'
 
-const MessageGroupItem = ({ messageGroup }) => {
+const MessageGroupItem = ({ message_group }) => {
   const params = useParams();
+
+
 
   const format_time_created_at = (value) => {
     // format: 2050-11-20 18:32:47 +0000
@@ -24,25 +27,26 @@ const MessageGroupItem = ({ messageGroup }) => {
 
   const classes = () => {
     let classes = ["message_group_item"];
-    if (params.handle === messageGroup.handle){
+    if (params.handle === message_group.handle){
       classes.push('active')
     }
     return classes.join(' ');
   }
+   
 
   return (
-    <Link className={classes()} to={`/messages/@`+messageGroup.handle}>
+    <Link className={classes()} to={`/messages/@`+message_group.handle}>
       <div className='message_group_avatar'></div>
       <div className='message_content'>
-        <div classsName='message_group_meta'>
+        <div className='message_group_meta'>
           <div className='message_group_identity'>
-            <div className='display_name'>{messageGroup.display_name}</div>
-            <div className="handle">@{messageGroup.handle}</div>
+            <div className='display_name'>{message_group.display_name}</div>
+            <div className="handle">@{message_group.handle}</div>
           </div>{/* activity_identity */}
         </div>{/* message_meta */}
-        <div className="message">{messageGroup.message}</div>
-        <div className="created_at" title={messageGroup.created_at}>
-          <span className='ago'>{format_time_created_at(messageGroup.created_at)}</span> 
+        <div className="message">{message_group.message}</div>
+        <div className="created_at" title={message_group.created_at}>
+          <span className='ago'>{format_time_created_at(message_group.created_at)}</span> 
         </div>{/* created_at */}
       </div>{/* message_content */}
     </Link>

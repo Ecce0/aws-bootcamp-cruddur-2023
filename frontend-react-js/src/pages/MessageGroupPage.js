@@ -1,7 +1,6 @@
 import './MessageGroupPage.css';
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
 import MessagesFeed from '../components/MessageFeed';

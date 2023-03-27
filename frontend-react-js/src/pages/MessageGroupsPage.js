@@ -1,6 +1,5 @@
 import './MessageGroupsPage.css';
 import React, { useState, useEffect, useRef } from "react";
-
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
 
@@ -56,7 +55,7 @@ const MessageGroupsPage = () => {
     <article>
       <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
       <section className='message_groups'>
-        <MessageGroupFeed message_groups={messageGroups} />
+        <MessageGroupFeed groups={messageGroups} />
       </section>
       <div className='content'>
       </div>
