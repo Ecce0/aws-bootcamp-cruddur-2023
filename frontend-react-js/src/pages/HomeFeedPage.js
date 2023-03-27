@@ -27,6 +27,7 @@ const HomeFeedPage = () => {
       let resJson = await res.json();
       if (res.status === 200) {
         setActivities([...resJson])
+        console.log(activities)
       } else {
         console.log(res)
       }
