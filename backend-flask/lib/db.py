@@ -40,6 +40,8 @@ class Db:
     no_color = '\033[0m'
     print(f'{cyan} SQL STATEMENT-[{title}]------{no_color}')
     print(sql,params)
+
+
   def query_commit(self,sql,params={}):
     self.print_sql('commit with returning',sql,params)
 
@@ -67,6 +69,7 @@ class Db:
         cur.execute(wrapped_sql,params)
         json = cur.fetchone()
         return json[0]
+  # When we want to return an array of json objects
   # When we want to return an array of json objects
   def query_object_json(self,sql,params={}):
 
