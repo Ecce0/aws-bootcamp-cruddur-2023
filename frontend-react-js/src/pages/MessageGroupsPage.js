@@ -23,8 +23,9 @@ const MessageGroupsPage = () => {
         method: "GET"
       });
       let resJson = await res.json();
+      console.log(resJson)
       if (res.status === 200) {
-        setMessageGroups(resJson)
+        setMessageGroups([...resJson])
       } else {
         console.log(res)
       }

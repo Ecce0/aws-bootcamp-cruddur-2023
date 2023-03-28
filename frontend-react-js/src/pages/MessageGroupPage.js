@@ -30,7 +30,7 @@ const MessageGroupPage = () => {
       });
       let resJson = await res.json();
       if (res.status === 200) {
-        setMessageGroups(resJson)
+        setMessageGroups([...resJson])
       } else {
         console.log(res)
       }
