@@ -5,7 +5,6 @@ import uuid
 import os
 import botocore.exceptions
 
-
 class Ddb:
   def client():
     endpoint_url = os.getenv("AWS_ENDPOINT_URL")
@@ -20,7 +19,7 @@ class Ddb:
     table_name = 'cruddur-messages'
     query_params = {
       'TableName': table_name,
-      'KeyConditionExpression': 'pk = :pk',
+      'KeyConditionExpression': 'pk = :pk AND begins_with(sk,:year)',
       'ScanIndexForward': False,
       'Limit': 20,
       'ExpressionAttributeValues': {
@@ -28,13 +27,13 @@ class Ddb:
         ':pk': {'S': f"GRP#{my_user_uuid}"}
       }
     }
-    print('query-params-')
+    print('query-params:',query_params)
     print(query_params)
     # query the table
     response = client.query(**query_params)
     items = response['Items']
     
-    print("items::", items)
+
     results = []
     for item in items:
       last_sent_at = item['sk']['S']
