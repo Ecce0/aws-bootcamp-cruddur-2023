@@ -27,12 +27,10 @@ class Ddb:
         ':pk': {'S': f"GRP#{my_user_uuid}"}
       }
     }
-    print('query-params:',query_params)
-    print(query_params)
+    print('query-params:::::::::',query_params)
     # query the table
     response = client.query(**query_params)
-    items = response['Items']
-    
+    items = response['Items']    
 
     results = []
     for item in items:
