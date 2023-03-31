@@ -37,3 +37,19 @@
   https://github.com/Ecce0/aws-bootcamp-cruddur-2023/blob/2cedd058e1982ed7e4020c97b15ae6e3ac99fde3/backend-flask/lib/db.py#L38
 
 
+Below are notes self
+--------------------------------------------------------------
+There's a difference between running postgres local and remote. 
+The if else statements in the bash scripts state whether or not to run locally or on prod
+
+Whenever you spin up a new workspace, be sure to run the following bash scripts:
+ -db/drop
+ -db/create
+ -db/schema-load
+ -db/seed
+
+The drop is going to drop any database running locally.
+The create is going to create a brand new DB locally.
+The schema-load is going to load the schemas set in schema.sql
+The seed is going to seed data coming from seed.sql
+
