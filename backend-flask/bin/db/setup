@@ -1,18 +1,19 @@
-# #! /usr/bin/bash
-# set -e # stop if it fails at any point
+#! /usr/bin/bash
+set -e # stop if it fails at any point
 
-# CYAN='\033[1;36m'
-# NO_COLOR='\033[0m'
-# LABEL="db-setup"
-# printf "${CYAN}== ${LABEL}${NO_COLOR}\n"
+ORANGE='\033[0;33m'
+NO_COLOR='\033[0m'
+LABEL="db-setup"
+printf "${ORANGE}== ${LABEL}${NO_COLOR}\n"
 
-# #echo "==== db-setup"
+echo "==== db-setup"
 
-# bin_path="$(realpath .)/bin"
+bin_path="$(realpath .)/bin"
 
-# source "$bin_path/db/drop"
-# source "$bin_path/db/create"
-# source "$bin_path/db/schema-load"
-# source "$bin_path/db/seed"
-# source "$bin_path/db/update_cognito_user_ids"
+source "$bin_path/db/kill-sessions"
+source "$bin_path/db/drop"
+source "$bin_path/db/create"
+source "$bin_path/db/schema-load"
+source "$bin_path/db/seed"
+source "$bin_path/db/update_cognito_user_ids"
 
