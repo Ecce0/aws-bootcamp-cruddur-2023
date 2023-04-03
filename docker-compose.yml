@@ -18,7 +18,7 @@ services:
       ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
       AWS_COGNITO_USER_POOL_ID: "${AWS_DEFAULT_REGION}_GHUR3Uvsf"
       AWS_COGNITO_USER_POOL_CLIENT_ID: "6ueligdf6dsbo7cu7j8kiig1s"   
-      GITPOD_IP: "$${GITPOD_IP}"
+      # GITPOD_IP: "$${GITPOD_IP}"
     build: ./backend-flask
     ports:
       - "4567:4567"
