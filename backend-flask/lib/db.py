@@ -65,7 +65,7 @@ class Db:
   # when we want to return a json object
   def query_array_json(self,sql,params={}):
     self.print_sql('array',sql,params)
-
+# its erroring out below here, specifically line 70
     wrapped_sql = self.query_wrap_array(sql)
     with self.pool.connection() as conn:
       with conn.cursor() as cur:
