@@ -3,10 +3,12 @@
 import boto3
 import sys
 
+# This is for dev environment
 attrs = {
     'endpoint_url': 'http://localhost:8000'
 }
 
+#if the second argument of the CLI COMMAND is 'prod', run in prod mode
 if len(sys.argv) == 2:
     if "prod" in sys.argv[1]:
         attrs = {}
