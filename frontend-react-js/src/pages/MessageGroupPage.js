@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
 import MessageFeed from '../components/MessageFeed';
-import MessagesForm from '../components/MessageForm';
+import MessageForm from '../components/MessageForm';
 import checkAuth from '../lib/CheckAuth'
 
 const MessageGroupPage = () => {
@@ -76,7 +76,7 @@ const MessageGroupPage = () => {
       </section>
       <div className='content messages'>
         <MessageFeed messages={messages} />
-        {/*<MessagesForm setMessages={setMessages} />*/}
+        <MessageForm setMessages={setMessages} />
       </div>
     </article>
   );

@@ -1,7 +1,7 @@
 import './MessageForm.css';
 import React, { useState } from "react";
 import process from 'process';
-import { useParams } from 'react-router-dom';
+import { json, useParams } from 'react-router-dom';
 
 const MessageForm = () => {
   const [count, setCount] = useState(0);
@@ -17,6 +17,12 @@ const MessageForm = () => {
   const onsubmit = async (event) => {
     event.preventDefault();
     try {
+      json = { message }
+      if (params.handle) {
+        json.handle = params.handle
+      } else {
+        json.message_group_uuid = params.message_group_uuid
+      }      
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/messages`
       console.log('onsubmit payload', message)
       const res = await fetch(backend_url, {
@@ -26,10 +32,7 @@ const MessageForm = () => {
           'Accept': 'application/json',
           'Content-Type': 'application/json'                   
         },
-        body: JSON.stringify({
-          message: message,
-          user_receiver_handle: params.handle
-        }),
+        body: JSON.stringify(json),
       });
       let data = await res.json();
       if (res.status === 200) {
