@@ -46,7 +46,7 @@ class Ddb:
       })
     return results
 
-    
+
   def list_messages(client,message_group_uuid):
     year = str(datetime.now().year)
     table_name = 'cruddur-messages'
