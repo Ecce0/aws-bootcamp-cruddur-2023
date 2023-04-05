@@ -45,11 +45,11 @@ background: rgba(255,255,255,0.08)
 
 .message_group_item .message_group_identity .display_name {
   font-weight: 800;
-  color: #fff;
+  color: #150025;
 }
 
 .message_group_item  .message_group_identity .handle {
-  color: rgb(255,255,255,0.5);
+  color: #150025;
 }
 
 
@@ -59,7 +59,7 @@ background: rgba(255,255,255,0.08)
 }
 
 .message_group_item .message {
-  color: #fff;
+  color: #150025;
   font-size: 16px;
   margin-top: 8px;
 }

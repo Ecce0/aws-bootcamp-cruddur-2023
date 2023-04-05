@@ -1,6 +1,6 @@
 section.message_groups {
-  background: #000;
-  border-right: solid 1px rgb(58,63,78);
+  background: rgba(149,0,255,0.1);
+  border-right: solid 1px #150025;
   padding: 0px;
 }
 
@@ -8,10 +8,11 @@ section.message_groups {
   padding: 16px;
   padding-bottom: 48px;
   border-bottom: solid 1px rgb(58,63,78);
+  border-radius: 40px 40px 0px 40px;
 }
 
 .message_group_feed_heading .title{
-  color: #fff;
+  color: #150025;
   font-weight: 800;
   font-size: 20px;
 }
@@ -25,4 +26,5 @@ section.message_groups {
 .message_group_feed_collection {
   flex-grow: 1;
   overflow: auto;
+  color: #150025;
 }

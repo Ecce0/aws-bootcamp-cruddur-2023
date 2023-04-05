@@ -2,7 +2,7 @@ import './MessageItem.css';
 import { Link } from "react-router-dom";
 import { DateTime } from 'luxon';
 
-const MessageItem = ({message}) => {
+const MessageItem = ({ message }) => {
 
   const format_time_created_at = (value) => {
     // format: 2050-11-20 18:32:47 +0000

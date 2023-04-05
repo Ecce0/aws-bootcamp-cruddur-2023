@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import React, { useState } from 'react'
 
 const MessageGroupItem = ({ message_group }) => {
+  
   const params = useParams();
 
   const format_time_created_at = (value) => {
