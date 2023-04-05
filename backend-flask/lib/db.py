@@ -97,8 +97,6 @@ class Db:
       with conn.cursor() as cur:
         cur.execute(sql,params)
         json = cur.fetchone()
-        
-        print('json--------------------------',json)
         return json[0]
 
 
