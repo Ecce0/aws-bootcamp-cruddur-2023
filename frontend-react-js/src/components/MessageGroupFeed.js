@@ -3,8 +3,6 @@ import './MessageGroupFeed.css';
 import MessageGroupItem from './MessageGroupItem';
 
 const MessageGroupFeed = ({ groups = [] }) => {  
-
-
   return (
     <div className='message_group_feed'>
       <div className='message_group_feed_heading'>

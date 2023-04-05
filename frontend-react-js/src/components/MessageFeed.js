@@ -1,7 +1,7 @@
 import './MessageFeed.css';
 import MessageItem from './MessageItem';
 
-const MessageFeed = ({ messages }) => {
+const MessageFeed = ({ messages = [] }) => {
   return (
     <div className='message_feed'>
       <div className='message_feed_heading'>
