@@ -16,9 +16,6 @@ const MessageGroupPage = () => {
   const params = useParams();
 
 
-  //remember to remove the next line, putting a console.log to remove errors in docker logs
-  console.log(popped)
-
   const loadMessageGroupsData = async () => {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/message_groups`
@@ -49,7 +46,6 @@ const MessageGroupPage = () => {
         method: "GET"
       });
       let resJson = await res.json();
-      console.log('resjsooooooooooon', resJson)
       if (res.status === 200) {
         setMessages([...resJson])
       } else {

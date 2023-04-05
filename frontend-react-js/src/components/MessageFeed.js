@@ -5,7 +5,7 @@ const MessageFeed = ({ messages = [] }) => {
   return (
     <div className='message_feed'>
       <div className='message_feed_heading'>
-        <div className='title'>Messages</div>
+        <div className='title'>Thread</div>
       </div>
       <div className='message_feed_collection'>
         {messages.map(message => {
