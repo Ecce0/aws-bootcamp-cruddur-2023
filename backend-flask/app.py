@@ -160,6 +160,7 @@ def data_messages(message_group_uuid):
         cognito_user_id=cognito_user_id,
         message_group_uuid=message_group_uuid
       )
+
     if model['errors'] is not None:
       return model['errors'], 422
     else:
@@ -293,6 +294,8 @@ def data_activities_reply(activity_uuid):
 @app.route("/api/users/@<string:handle>/short", methods=['GET'])
 def data_users_short(handle):
   data = UsersShort.run(handle)
+  print('dataaaaaaaaaaaaaaaaa', data)
+  
   return data, 200
 
 if __name__ == "__main__":
