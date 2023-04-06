@@ -1,5 +1,5 @@
 import './MessageGroupPage.css';
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import DesktopNavigation  from '../components/DesktopNavigation';
 import MessageGroupFeed from '../components/MessageGroupFeed';
@@ -22,6 +22,8 @@ export default function MessageGroupPage() {
       const res = await fetch(backend_url, {
         method: "GET"
       });
+      //failing at line 22
+      console.log('ressssssssssssss', res)
       let resJson = await res.json();
       if (res.status === 200) {
         console.log('other user:',resJson)

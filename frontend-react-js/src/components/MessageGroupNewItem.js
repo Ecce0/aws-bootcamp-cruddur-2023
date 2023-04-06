@@ -8,7 +8,7 @@ const MessageGroupNewItem = ({ user }) => {
     <Link className='message_group_item active' to={`/messages/new/${user.handle}`}>
       <div className='message_group_avatar'></div>
       <div className='message_content'>
-        <div classsName='message_group_meta'>
+        <div className='message_group_meta'>
           <div className='message_group_identity'>
             <div className='display_name'>{user.display_name}</div>
             <div className="handle">@{user.handle}</div>

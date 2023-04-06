@@ -15,6 +15,7 @@ import {
   RouterProvider
 } from "react-router-dom";
 import { Amplify } from 'aws-amplify';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 Amplify.configure({
   "AWS_PROJECT_REGION": process.env.REACT_APP_AWS_PROJECT_REGION,
@@ -31,55 +32,23 @@ Amplify.configure({
   }
 });
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomeFeedPage />
-  },
-  {
-    path: "/notifications",
-    element: <NotificationsFeedPage />
-  },
-  {
-    path: "/@:handle",
-    element: <UserFeedPage />
-  },
-  {
-    path: "/messages",
-    element: <MessageGroupsPage />
-  },
-  {
-    path: "/messages/new/:handle",
-    element: <MessageGroupNewPage />
-  },
-  {
-    path: "/messages/:message_group_uuid",
-    element: <MessageGroupPage />
-  },
-  {
-    path: "/signup",
-    element: <SignupPage />
-  },
-  {
-    path: "/signin",
-    element: <SigninPage />
-  },
-  {
-    path: "/confirm",
-    element: <ConfirmationPage />
-  },
-  {
-    path: "/forgot",
-    element: <RecoverPage />
-  }
-]);
-
 const App = () => {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+ return (
+  <Router>
+    <Routes>
+      <Route path='/' element={<HomeFeedPage />} />
+      <Route path='/notifications' element={<NotificationsFeedPage />} />
+      <Route path="/@:handle" element={<UserFeedPage />} />
+      <Route path='/messages' element={<MessageGroupsPage />} />
+      <Route path='/messages/new/:handle' element={<MessageGroupNewPage />} />
+      <Route path='/messages/:message_group_uuid' element={<MessageGroupPage />} />
+      <Route path='/signup' element={<SignupPage />} />
+      <Route path='/signin' element={<SigninPage />} />
+      <Route path='/confirm' element={<ConfirmationPage />} />
+      <Route path='/forgot' element={<RecoverPage />} />
+     </Routes>
+  </Router>
+ )
 }
 
 export default App;
