@@ -1,9 +1,9 @@
 import './MessageForm.css';
 import React, { useState } from "react";
 import process from 'process';
-import { json, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const MessageForm = () => {
+const MessageForm = ({ setMessages }) => {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
   const params = useParams();
@@ -17,7 +17,7 @@ const MessageForm = () => {
   const onsubmit = async (event) => {
     event.preventDefault();
     try {
-      json = { message }
+      let json = { message }
       if (params.handle) {
         json.handle = params.handle
       } else {
@@ -36,7 +36,13 @@ const MessageForm = () => {
       });
       let data = await res.json();
       if (res.status === 200) {
-        setMessage(current => [...current,data]);
+        console.log('data', data)
+        if (data.message_group_uuid) {
+          console.log('redirect to message group')
+          window.location.href = `/message/${data.message_group_uuid}`
+        } else {
+          setMessages(current => [...current, data])
+        }
       } else {
         console.log(res)
       }
@@ -44,6 +50,8 @@ const MessageForm = () => {
       console.log(err);
     }
   }
+
+ 
 
   const textarea_onchange = (event) => {
     setCount(event.target.value.length);

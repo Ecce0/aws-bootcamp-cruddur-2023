@@ -34,7 +34,7 @@ const MessageGroupItem = ({ message_group }) => {
    
 
   return (
-    <Link className={classes()} to={`/messages/`+message_group.uuid}>
+    <Link className={classes()} to={`/messages/${message_group.uuid}`}>
       <div className='message_group_avatar'></div>
       <div className='message_content'>
         <div className='message_group_meta'>

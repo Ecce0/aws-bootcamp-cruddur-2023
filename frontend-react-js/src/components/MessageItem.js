@@ -21,7 +21,7 @@ const MessageItem = ({ message }) => {
   };
 
   return (
-    <Link className='message_item' to={`/messages/@`+message.handle}>
+    <Link className='message_item' to={`/messages/@${message.handle}`}>
       <div className='message_avatar'></div>
       <div className='message_content'>
         <div className='message_meta'>

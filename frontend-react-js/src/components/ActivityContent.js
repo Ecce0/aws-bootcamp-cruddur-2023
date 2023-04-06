@@ -53,7 +53,7 @@ const ActivityContent = ({ activity }) => {
       <div className='activity_avatar'></div>
       <div className='activity_content'>
         <div className='activity_meta'>
-          <Link className='activity_identity' to={`/@`+activity.handle}>
+          <Link className='activity_identity' to={`/@${activity.handle}`}>
             <div className='display_name'>{activity.display_name}</div>
             <div className="handle">@{activity.handle}</div>
           </Link>{/* activity_identity */}
