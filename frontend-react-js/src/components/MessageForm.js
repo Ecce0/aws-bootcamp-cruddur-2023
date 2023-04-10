@@ -39,7 +39,7 @@ const MessageForm = ({ setMessages }) => {
         console.log('data', data)
         if (data.message_group_uuid) {
           console.log('redirect to message group')
-          window.location.href = `/message/${data.message_group_uuid}`
+          window.location.href = `/messages/${data.message_group_uuid}`
         } else {
           setMessages(current => [...current, data])
         }

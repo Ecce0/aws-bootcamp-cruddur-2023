@@ -10,10 +10,6 @@ import MessageGroupPage from './pages/MessageGroupPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import MessageGroupNewPage from './pages/MessageGroupNewPage'
 import React from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";
 import { Amplify } from 'aws-amplify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
