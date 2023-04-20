@@ -4,7 +4,7 @@
     "desiredCount": 1,
     "loadBalancers": [
         {
-            "targetGroupArn": "arn:aws:elasticloadbalancing:$AWS_DEFAULT_REGION:$AWS_ACCOUNT_ID:targetgroup/cruddur-frontend-react-js/78f9da8a4a911b56",
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:470434031127:targetgroup/cruddur-frontend-react-js/78f9da8a4a911b56",
             "containerName": "frontend-react-js",
             "containerPort": 3000
         }
