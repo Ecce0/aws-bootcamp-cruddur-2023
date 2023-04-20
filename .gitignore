@@ -1,4 +1,4 @@
 #CONNECTION_URL: "postgresql://postgres:password@db:5432/cruddur"
 
-
-#aws
+docker/**/*
+frontend-react-js/build/*

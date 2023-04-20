@@ -6,7 +6,7 @@
       "ssm:GetParameters",
       "ssm:GetParameter"
     ],
-    "Resource": "arn:aws:ssm:us-east-1:470434031127:parameter/cruddur/backend-flask/*"
+    "Resource": "arn:aws:ssm:us-east-1:${AWS_ACCOUNT_ID}:parameter/cruddur/backend-flask/*"
   }]
 }
 

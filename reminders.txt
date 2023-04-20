@@ -1,7 +1,0 @@
-Run the DB to setup
-Run the DDB to seed the data
-Be sure to sign in to ECR (see journal 6-fargate for CLI command)
-Set the path: export ECR_PYTHON_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/cruddur-python"
-Echo it out to make sure its right: echo $ECR_PYTHON_URL
-For the variables in backend-flask.json, switch to account ID number
-Make sure task definitions are setup
