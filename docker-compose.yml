@@ -30,7 +30,9 @@ services:
       REACT_APP_AWS_COGNITO_REGION: "${AWS_DEFAULT_REGION}"
       REACT_APP_AWS_USER_POOLS_ID: "${AWS_DEFAULT_REGION}_GHUR3Uvsf"
       REACT_APP_CLIENT_ID: "6ueligdf6dsbo7cu7j8kiig1s"
-    build: ./frontend-react-js
+    build:
+      context: ./frontend-react-js
+      dockerfile: Dockerfile.prod
     ports:
       - "3000:3000"
     volumes:
