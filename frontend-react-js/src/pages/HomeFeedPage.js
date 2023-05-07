@@ -5,7 +5,7 @@ import DesktopSidebar from '../components/DesktopSidebar';
 import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 import ReplyForm from '../components/ReplyForm';
-import checkAuth from '../lib/CheckAuth'
+import { checkAuth, getAccessToken } from '../lib/CheckAuth'
 
 const HomeFeedPage = () => {
   const [activities, setActivities] = useState([]);
@@ -18,16 +18,18 @@ const HomeFeedPage = () => {
   const loadData = async () => {
     try {
       const backend_url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
+      await getAccessToken()
+      const access_token = localStorage.getItem('access_token')
       const res = await fetch(backend_url, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`
+          Authorization: `Bearer ${access_token}`
         },
         method: "GET"
       });
       let resJson = await res.json();
       if (res.status === 200) {
-        setActivities([...resJson])
-        console.log(activities)
+        setActivities(resJson)
+        console.log(resJson)
       } else {
         console.log(res)
       }
