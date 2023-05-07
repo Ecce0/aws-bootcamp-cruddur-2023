@@ -64,6 +64,7 @@ export default function MessageGroupPage() {
     loadMessageGroupsData();
     loadUserShortData();
     checkAuth(setUser);
+    // eslint-disable-next-line
   }, [])
 
   

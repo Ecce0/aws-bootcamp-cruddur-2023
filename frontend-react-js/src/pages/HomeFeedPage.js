@@ -47,7 +47,7 @@ const HomeFeedPage = () => {
 
     loadData();
     checkAuth(setUser);
-  }, [loadData])
+  }, [])
 
   return (
     <article>

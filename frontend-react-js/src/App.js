@@ -28,6 +28,7 @@ Amplify.configure({
   }
 });
 
+
 const App = () => {
  return (
   <Router>

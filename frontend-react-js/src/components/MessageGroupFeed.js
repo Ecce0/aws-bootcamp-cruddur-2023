@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './MessageGroupFeed.css';
 import MessageGroupItem from './MessageGroupItem';
 import MessageGroupNewItem from './MessageGroupNewItem'
