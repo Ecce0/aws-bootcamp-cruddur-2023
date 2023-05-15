@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@aws-amplify/ui-react": "^4.6.1",
-    "aws-amplify": "^5.2.0"
-  }
-}
