@@ -13,7 +13,7 @@ docker run --rm \
   -it backend-flask-prod
 
 
-  #! /usr/bin/bash
+#! /usr/bin/bash
 
 # docker run --rm \
 # -p 4567:4567 \
