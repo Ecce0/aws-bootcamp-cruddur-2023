@@ -13,9 +13,6 @@ import React from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-console.log('Auth', Auth)
-console.log('Amplify', Amplify)
-
 Amplify.configure({
   "AWS_PROJECT_REGION": process.env.REACT_APP_AWS_PROJECT_REGION,
   "aws_cognito_region": process.env.REACT_APP_AWS_COGNITO_REGION,
