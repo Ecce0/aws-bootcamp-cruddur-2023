@@ -16,7 +16,7 @@ ENV REACT_APP_CLIENT_ID=$REACT_APP_CLIENT_ID
 COPY . ./frontend-react-js
 WORKDIR /frontend-react-js
 RUN npm install
-RUN npm run build
+RUN npm run build 
 
 # New Base Image ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 FROM nginx:1.23.3-alpine
