@@ -20,7 +20,10 @@
         "subnets": [
             "subnet-0e87fd9ea2830c79d",
             "subnet-01e37ce6ea04e40b0",
-            "subnet-07266aa028927e7b7"
+            "subnet-07266aa028927e7b7",
+            "subnet-0bdce23af279d0991",
+            "subnet-0e49ae55793dfa5d1",
+            "subnet-00133ed436efcbc20"
         ]
       }
     },

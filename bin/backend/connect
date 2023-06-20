@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-
+# Make sure you change the task ID on line 6 to the latest
 
 if [ -z "$1" ]; then
   echo "No TASK_ID argument supplied eg ./bin/ecs/connect-to-backend-flask 5cfb7402e6764f049e1856fefbfab8c8"
