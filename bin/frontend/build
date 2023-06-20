@@ -6,6 +6,8 @@ BIN_PATH=$(dirname $FRONTEND_PATH)
 PROJECT_PATH=$(dirname $BIN_PATH)
 FRONTEND_REACT_JS_PATH="$PROJECT_PATH/frontend-react-js"
 
+# should line 12 be the arn for the frontend alb http://cruddur-alb-1555340210.us-east-1.elb.amazonaws.com:4567?????
+
 docker build \
 --build-arg REACT_APP_BACKEND_URL="https://api.ec-cruddur.link" \
 --build-arg REACT_APP_AWS_PROJECT_REGION="$AWS_DEFAULT_REGION" \
