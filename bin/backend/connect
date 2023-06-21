@@ -3,7 +3,7 @@
 # Make sure you change the task ID on line 6 to the latest
 
 if [ -z "$1" ]; then
-  echo "No TASK_ID argument supplied eg ./bin/ecs/connect-to-backend-flask 5cfb7402e6764f049e1856fefbfab8c8"
+  echo "No TASK_ID argument supplied eg ./bin/ecs/connect-to-backend-flask 13a48780570c417e8a77f822ffacfbc7
   exit 1
 fi
 TASK_ID=$1
